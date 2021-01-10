@@ -1307,11 +1307,14 @@ section .section__icon:hover svg {
   fill: #00a99d;
 }
 
-.section__title-text .left {
+.section__title-text #left-shapes {
   left: 0;
+  -webkit-transform: translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
 }
 
-.section__title-text .right {
+.section__title-text #right-shapes {
   right: 0;
 }
 
@@ -1364,6 +1367,93 @@ section .section__icon:hover svg {
 .section__title-line:after {
   left: 10px;
   margin-right: -50%;
+}
+
+@-webkit-keyframes animate-svg-fill-1 {
+  0% {
+    fill: #00a99d;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #00a99d;
+  }
+}
+
+@keyframes animate-svg-fill-1 {
+  0% {
+    fill: #00a99d;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #00a99d;
+  }
+}
+
+.svg-elem-1 {
+  -webkit-animation: animate-svg-fill-1  3s linear 1.5s infinite;
+          animation: animate-svg-fill-1  3s linear 1.5s infinite;
+}
+
+@-webkit-keyframes animate-svg-fill-2 {
+  0% {
+    fill: #00a99d;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #00a99d;
+  }
+}
+
+@keyframes animate-svg-fill-2 {
+  0% {
+    fill: #00a99d;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #00a99d;
+  }
+}
+
+.svg-elem-2 {
+  -webkit-animation: animate-svg-fill-2  3s linear 2s infinite;
+          animation: animate-svg-fill-2  3s linear 2s infinite;
+}
+
+@-webkit-keyframes animate-svg-fill-3 {
+  0% {
+    fill: #00a99d;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #00a99d;
+  }
+}
+
+@keyframes animate-svg-fill-3 {
+  0% {
+    fill: #00a99d;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #00a99d;
+  }
+}
+
+.svg-elem-3 {
+  -webkit-animation: animate-svg-fill-3  3s linear 3s infinite;
+          animation: animate-svg-fill-3  3s linear 3s infinite;
 }
 
 .header-sticky {
@@ -1941,6 +2031,17 @@ section .section__icon:hover svg {
   font-weight: 800;
   letter-spacing: 1px;
   margin-bottom: 15px;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, right top, from(#fff), color-stop(#000), to(#fff));
+  background: -o-linear-gradient(left, #fff, #000, #fff);
+  background: linear-gradient(90deg, #fff, #000, #fff);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  -webkit-animation: animate 3s linear infinite;
+          animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
 @media (max-width: 767px) {
@@ -1952,6 +2053,24 @@ section .section__icon:hover svg {
 @media (min-width: 767px) {
   .main__slider .slider__title {
     font-size: calc(30px + 34 * (100vw / 1460));
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
   }
 }
 
@@ -2086,6 +2205,12 @@ section .section__icon:hover svg {
       flex-flow: column nowrap;
 }
 
+.offer__item:hover .offer__icon {
+  background-color: #00a99d;
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite;
+}
+
 @media (max-width: 685px) {
   .offer__item {
     text-align: left;
@@ -2171,12 +2296,6 @@ section .section__icon:hover svg {
   width: 38px;
   height: 38px;
   fill: #e4e4e4;
-}
-
-.offer__icon:hover {
-  background-color: #00a99d;
-  -webkit-animation: pulse 2s infinite;
-          animation: pulse 2s infinite;
 }
 
 @media (max-width: 685px) {
@@ -2467,6 +2586,13 @@ section .section__icon:hover svg {
 @media (max-width: 768px) {
   .skill__block p {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 425px) {
+  .skill__block p {
+    margin-top: 10px;
+    font-size: 11px;
   }
 }
 
@@ -2856,6 +2982,10 @@ section .section__icon:hover svg {
   overflow: hidden;
 }
 
+.facts__item:hover .facts__number:after, .facts__item:hover .facts__number:before {
+  background-color: #00a99d;
+}
+
 .facts__item h6 {
   font-size: 16px;
 }
@@ -2921,10 +3051,6 @@ section .section__icon:hover svg {
 
 .facts__number:before {
   right: -30px;
-}
-
-.facts__number:hover:after, .facts__number:hover:before {
-  background-color: #00a99d;
 }
 
 .facts__icon {
@@ -3248,7 +3374,7 @@ section .section__icon:hover svg {
   display: inline-block;
   color: #aaaaaa;
   padding-left: 30px;
-  margin-bottom: 15px;
+  margin: 0 15px 15px 15px;
   -webkit-transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
   transition: all .3s ease-in;

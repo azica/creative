@@ -1868,10 +1868,10 @@ section .section__icon:hover svg {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  left: 0;
-  right: 0;
+  left: 15px;
+  right: 15px;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1170px;
 }
 
 .footer__form {
@@ -2341,7 +2341,7 @@ section .section__icon:hover svg {
 .features {
   background-color: #383838;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .features .section__title-text {
@@ -2353,16 +2353,81 @@ section .section__icon:hover svg {
   display: -ms-flexbox;
   display: flex;
   text-align: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .features__list {
-  max-width: 360px;
+  width: 40%;
   margin-top: 50px;
+  padding-right: 8.5%;
+}
+
+@media (max-width: 1024px) {
+  .features__list {
+    width: 50%;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features__list {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .features__list {
+    width: 80%;
+  }
+}
+
+@media (max-width: 425px) {
+  .features__list {
+    width: 100%;
+  }
+}
+
+.features__mockup {
+  width: 60%;
+  position: relative;
+  background: url("../img/mockup02.png") no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  .features__mockup {
+    width: 50%;
+    margin-left: auto;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 680px) {
+  .features__mockup {
+    height: 300px;
+    width: 80%;
+    background-size: cover;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .features__mockup {
+    height: 200px;
+  }
 }
 
 .features__item {
   position: relative;
   margin-bottom: 45px;
+}
+
+@media (max-width: 425px) {
+  .features__item {
+    margin-bottom: 30px;
+  }
 }
 
 .features__item svg {
@@ -2373,6 +2438,12 @@ section .section__icon:hover svg {
   width: 40px;
   height: 40px;
   fill: #00a99d;
+}
+
+@media (max-width: 768px) {
+  .features__item h6, .features__item p {
+    padding-left: 60px !important;
+  }
 }
 
 .features__item h6 {

@@ -197,7 +197,18 @@ $(document).ready(function($) {
 });
 
 
-var map = new google.maps.Map(document.getElementById('map'),{
-  center: { lat: -34.397, lng: 150.644 },
-  zoom: 8,
-});
+//  GOOGLE MAP FUNCTION
+function initMap() {
+  var myLocation = { lat: 55.751244, lng: 37.618423 };
+  var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: myLocation,
+      map: map,
+  });
+  var marker = new google.maps.Marker({
+    position: myLocation,
+    map: map,
+  })
+}
+// =========================================================================
+
